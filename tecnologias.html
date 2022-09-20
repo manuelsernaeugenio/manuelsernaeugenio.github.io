@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tecnologías web &mdash; documentación de DAW. Módulo: Despliegue de aplicaciones web. - </title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/tabs.js"></script>
+        <script src="_static/translations.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="Modelos de arquitecturas web" href="modelos.html" />
+    <link rel="prev" title="Protocolo HTTP" href="http.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> DAW. Módulo: Despliegue de aplicaciones web.
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Buscar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduccion.html">Introducción</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arquitectura.html">Arquitecturas web</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http.html">Protocolo HTTP</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Tecnologías web</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduccion">Introducción</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tecnologias-del-cliente">Tecnologías del cliente</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tecnologias-en-el-servidor">Tecnologías en el servidor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tecnologias-de-despliegue">Tecnologías de despliegue</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="modelos.html">Modelos de arquitecturas web</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">DAW. Módulo: Despliegue de aplicaciones web.</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Tecnologías web</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="tecnologias-web">
+<h1>Tecnologías web<a class="headerlink" href="#tecnologias-web" title="Enlace permanente a este encabezado"></a></h1>
+<section id="introduccion">
+<h2>Introducción<a class="headerlink" href="#introduccion" title="Enlace permanente a este encabezado"></a></h2>
+<p>En el desarrollo web intervienen diferentes tecnología que han de utilizarse de forma combinada para un buen funcionamiento de las aplicaciones.
+Se pueden clasificar dichas tecnologias en:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Tecnologías de cliente.</strong> Su función principal es la de realizar forma la petición HTTP a partir de los parámetros necesarios, enviarla, recibir los datos, procesarlos y presentarlos. La mayor parte de estas tecnologías se aplican en los navegadores.</p></li>
+<li><dl class="simple">
+<dt><strong>Tecnologías de servidor.</strong> En este caso su función principal es recibir las peticiones, procesar dicha petición y de volver la respuesta al cliente. Dentro de estas tecnologías se tienene:</dt><dd><ul>
+<li><p>Servidores web. Especializados en el protocolo HTTP.</p></li>
+<li><p>Servidores de apliciones. Más especializados que los web, pueden trabajar con HTTP y otros protocolas, además de facilitar infraestructura para funcionalidades comunes.</p></li>
+<li><p>Lenguajes de servidores. Su función es a partir de la petición tratada por el servidor, realizar las acciones necesarias y fabricar la respuesta.</p></li>
+<li><p>Otros servidores. Conjunto de protocolos y servidores auxiliares necesrios para el funcionamiento de las aplicaciones web.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p><strong>Tecnologías de despliegue.</strong> El desarrollo de aplicaciones web y su puesta en producción es una tarea compleja. Se han desarrollado diferentes aplicaciones en función de los servidores y lenguajes que automatizan en mayor o menor grado la puesta en marcha de una aplicación web.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="tecnologias-del-cliente">
+<h2>Tecnologías del cliente<a class="headerlink" href="#tecnologias-del-cliente" title="Enlace permanente a este encabezado"></a></h2>
+<p>Los clientes web clásicos han sido los navegadores, aunque desde hace unos años pueden ser otros servidores, aplicaciones nativas de los diferentes sistemas operativos, «scripts», aunque los navegadores siguen
+siendo los más utilizados.
+Las tecnologías utilizadas en estos clientes son:</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">HTML</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">Javascript</button><button aria-controls="panel-0-0-2" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-2" name="0-2" role="tab" tabindex="-1">CSS</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><p>Lenguaje de marcas que el navegador recibe, va leyendo, crea un árbol con nodos y los representa en la pantalla. Los nodos HTML pueden ser:</p>
+<ul class="simple">
+<li><p><strong>Document.</strong> Nodo ráiz del árbol.</p></li>
+<li><p><strong>Element.</strong> Nodos a partir de las etiquetas HTML como &lt;div&gt; o &lt;a&gt;.</p></li>
+<li><p><strong>Text.</strong> Nodos de texto, hijos normalmente de nodos de tipo <strong>Element</strong>.</p></li>
+<li><p><strong>Attributos.</strong> Nodos hijos de <strong>Element</strong> que almacen personalizaciones de <strong>Element</strong> como src o style.</p></li>
+</ul>
+<img alt="_images/dom.png" class="align-center" src="_images/dom.png" />
+<p>La versión actual es HTML5, ha introducido algunos cambios significativos con versiones anteriores:</p>
+<ul>
+<li><p><strong>Web semántica</strong>.</p>
+<blockquote>
+<div><p>Anteriormente la estrucutra de una aplicación se realizaba utilizando &lt;div&gt;,
+esto aporta poca información semática (parte de la lingüística que estudia el significado de las expresiones lingüísticas).
+En esta nueva versión se añaden etiquetas, con el mismo comportamiento de &lt;div&gt; pero que añade información extra sobre la
+página. Algunos ejemplos:</p>
+<ul class="simple">
+<li><p>&lt;article&gt;</p></li>
+<li><p>&lt;section&gt;</p></li>
+<li><p>&lt;video&gt;</p></li>
+<li><p>&lt;audio&gt;</p></li>
+<li><p>&lt;progress&gt;</p></li>
+</ul>
+<p>La web semática permite que las web sean analizadas no solo por humanos, sino por programas. Además facilita la accesibilidad.</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">Ejemplo HTML semántico.</span><a class="headerlink" href="#id1" title="Enlace permanente a este código fuente"></a></div>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">header</span><span class="p">&gt;&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">section</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">article</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">figure</span><span class="p">&gt;</span>
+         <span class="p">&lt;</span><span class="nt">img</span><span class="p">&gt;</span>
+         <span class="p">&lt;</span><span class="nt">figcaption</span><span class="p">&gt;&lt;/</span><span class="nt">figcaption</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">figure</span><span class="p">&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">footer</span><span class="p">&gt;&lt;/</span><span class="nt">footer</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">Ejemplo HTML no semántico</span><a class="headerlink" href="#id2" title="Enlace permanente a este código fuente"></a></div>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;header&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;section&quot;</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;article&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;figure&quot;</span><span class="p">&gt;</span>
+         <span class="p">&lt;</span><span class="nt">img</span><span class="p">&gt;</span>
+         <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;figcaption&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;footer&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+</li>
+<li><p><strong>API</strong></p>
+<blockquote>
+<div><p>Los navegadores se han convertido en práctimente sistemas operativos, por ejemplo Chrome OS. También el desarrollo de aplicaciones
+híbridas con tecnologías web para dispositivos móviles se ha visto incrementado exponencialmente en los últimos años. A partir de estas
+necesidades, en HTML5 se han definido una serie de API’S para facilitar el desarrollo de aplicaciones más potentes que las clásicas aplicaciones
+web, de forma que se pueda acceder a información de la máquina/usuario, mejorar el rendimiento y almacenar gran cantidad de información en el cliente.
+Algunas de las API`s definidas:</p>
+<ul class="simple">
+<li><p><strong>Drag and Drop.</strong> Para dispositivos con pantallas táctiles, funciona con eventos.</p></li>
+<li><p><strong>Trabajo offline.</strong> Por ejemplo Google Docs, se basa en el uso de cachés e indicaciones de páginas web necesarias para funcionar offline.</p></li>
+<li><p><strong>Geolocalización.</strong> A través del navegador solicita las coordenadas actuales. El navegador suele pedir permiso previamente.</p></li>
+<li><p><strong>Almacenamiento.</strong> Hasta HTML5, la única forma de almacenar información persistente en el cliente eran las «Cookies». Con esta nueva versión se definen un almacen persistente de tipo clave/valor</p></li>
+</ul>
+<div class="admonition-investigar admonition">
+<p class="admonition-title">Investigar</p>
+<p>Buscar información sobre Web SQL ¿És compatible con todos los navegadores?</p>
+</div>
+<ul class="simple">
+<li><p><strong>WebSockets.</strong> Permite comunicación bidireccional, lleva tiempo si actualizarse y parece haber sido sustituida por WebTransport (HTTP/3)</p></li>
+<li><p><strong>WebWorkers.</strong> Para trabajo asíncrono de tareas, no afecta a la página principal, por ejemplo solicitar un json y procesarlo.</p></li>
+</ul>
+<p>En esta web se puede consultar la lista de API’s disponibles en la mayor parte de los navegadores <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/API">https://developer.mozilla.org/en-US/docs/Web/API</a>.</p>
+<p>Un ejemplo sencillo de Web Storage extraido de w3School (<strong>el acceso es con Javascript</strong>).</p>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">Ejemplo sencillo de Web Storage</span><a class="headerlink" href="#id3" title="Enlace permanente a este código fuente"></a></div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="nx">Storage</span><span class="p">)</span> <span class="o">!==</span> <span class="s2">&quot;undefined&quot;</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s2">&quot;nombre&quot;</span><span class="p">,</span> <span class="s2">&quot;Pedro&quot;</span><span class="p">);</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s2">&quot;nombre&quot;</span><span class="p">));</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;No soporta webstorage&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><p>Introducido por el antiguo navegador Netscape (precursor de Firefox), su función inicial era la de modificar el árbol DOM HTML e
+interactuar con ciertas funciones del navegador y validar formularios. Inicialmente llamado LiveScript, pero que paso a llamarse Javascript
+al llegar a un acuerdo con Sun.</p>
+<p>En 1997 Netscape decide estandarizar el lenguaje a través de ECMA, naciendo el lenguaje ECMASript, aunque coloquialmente se sigue llamando
+Javascript.</p>
+<p>Inicialmente sigue el paradigam estructurado, no orientado a objetos, sino a prototipos para la herencia, siendo el desarrollo y mantenimiento
+de los programas complejo , por ejemplo los métodos son funciones, y el constructor es una función.
+Un ejemplo de clase persona:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="lineno">1 </span><span class="kd">function</span> <span class="nx">Persona</span><span class="p">(</span><span class="nx">nombre</span><span class="p">,</span> <span class="nx">apellido</span><span class="p">,</span> <span class="nx">edad</span><span class="p">,</span> <span class="nx">genero</span><span class="p">,</span> <span class="nx">intereses</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno">2 </span>   <span class="c1">// definiendo de propiedades y métodos</span>
+<span class="lineno">3 </span>   <span class="k">this</span><span class="p">.</span><span class="nx">first</span> <span class="o">=</span> <span class="nx">first</span><span class="p">;</span>
+<span class="lineno">4 </span>   <span class="k">this</span><span class="p">.</span><span class="nx">last</span> <span class="o">=</span> <span class="nx">last</span><span class="p">;</span>
+<span class="lineno">5 </span>   <span class="c1">//...</span>
+<span class="lineno">6 </span><span class="p">}</span>
+<span class="lineno">7 </span><span class="kd">var</span> <span class="nx">person1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Persona</span><span class="p">(</span><span class="s1">&#39;Bob&#39;</span><span class="p">,</span> <span class="s1">&#39;Smith&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="s1">&#39;hombre&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;music&#39;</span><span class="p">,</span> <span class="s1">&#39;skiing&#39;</span><span class="p">]);</span>
+</pre></div>
+</div>
+<p>Desde sus inicios hasta la actualidad ha evolucionado hasta convertirse en uno de los lenguajes más usados <a class="reference external" href="https://www.tiobe.com/tiobe-index/">Índice TIOBE</a>, pasando por diferentes fases, algunas de
+ellas solapadas en el tiempo:</p>
+<ul>
+<li><p><strong>Guerra de navegadores.</strong> En los primeros años, ni HTML, ni Javascript se encuentran estandarizados. Los dos grandes navegadores (Firefox e IE), en especial este último no cumple con los mínimos estándares, época en la que desarrollar web era un «inferno».</p></li>
+<li><p><strong>Aparición primeras librerías.</strong> Se abstrae del navegador y aparecen librerías que intentan traer el mundo de los componentes visuales de las aplicaciones de escritorio a la web (Dojo o ExtJS), aunque la librería JQuery, orientada al manejo del DOM pasa a ser un estándar en el desarrollo Web.</p></li>
+<li><p><strong>Uso de peticiones asíncronas.</strong> Casi al mismo tiempo de la aparición de las primeras librerías, se comieza  a utilizar una cualidad de los navegadores, las peticiones asíncronas con la interfaz XMLHttpRequest desarrollada por Microsoft, popularizándose el uso de servicios web en el cliente.</p></li>
+<li><p><strong>Frameworks, herramientas y aplicaciones SPA.</strong> Aparición de frameworks para la creación de aplicaciones completas en el navegador en una única página (SPA), usando servicios web. Los más conocidos (Angular, React y Vue), integrando HTML, Javascript y CSS. Además de herramientas para gestion de paquetes como NPM o calidad de código como ESLint entre muchas otras.</p>
+<blockquote>
+<div><p>Un ejemplo básico con Vue:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">script</span><span class="o">&gt;</span>
+   <span class="n">export</span> <span class="n">default</span> <span class="p">{</span>
+   <span class="n">data</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="p">{</span>
+         <span class="n">count</span><span class="p">:</span> <span class="mi">0</span>
+         <span class="p">}</span>
+      <span class="p">}</span>
+   <span class="p">}</span>
+<span class="o">&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">template</span><span class="o">&gt;</span>
+   <span class="o">&lt;</span><span class="n">button</span> <span class="nd">@click</span><span class="o">=</span><span class="s2">&quot;count++&quot;</span><span class="o">&gt;</span><span class="n">Count</span> <span class="ow">is</span><span class="p">:</span> <span class="p">{{</span> <span class="n">count</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="n">button</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">template</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">style</span> <span class="n">scoped</span><span class="o">&gt;</span>
+   <span class="n">button</span> <span class="p">{</span>
+      <span class="n">font</span><span class="o">-</span><span class="n">weight</span><span class="p">:</span> <span class="n">bold</span><span class="p">;</span>
+   <span class="p">}</span>
+<span class="o">&lt;/</span><span class="n">style</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<div class="admonition-razonar admonition">
+<p class="admonition-title">Razonar</p>
+<p>¿Qué tecnologías utiliza el código anterior?</p>
+</div>
+</div></blockquote>
+</li>
+<li><p><strong>Características OO puras y variantes del lenguaje.</strong> A partir de EMACS6 o EMACS2015, se añaden característias de lenguajes OO puros como verdaderas clases. Aparecen lenguajes que transpilan a Javascript, como CoffeScript, aunque el único que a sobrevivido ha sido Typescript de Microsoft.</p></li>
+<li><p><strong>Paso al lado servidor.</strong> Usando el motor de renderizado V8 de Google Chromee se desarrolla el entorno <a class="reference external" href="https://nodejs.org/es/">Node.js</a> que permite la ejecución de código Javascript en el lado del servidor. Alcanzando gran popularidad.  Un ejemplo de Node.js y la librería <a class="reference external" href="https://expressjs.com">Express</a>:</p>
+<blockquote>
+<div><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;express&#39;</span><span class="p">)</span>
+<span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">()</span>
+<span class="kr">const</span> <span class="nx">port</span> <span class="o">=</span> <span class="mi">3000</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/hola&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+   <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s1">&#39;Hello World!&#39;</span><span class="p">)</span>
+<span class="p">})</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="nx">port</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Example app listening on port </span><span class="si">${</span><span class="nx">port</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+<div class="admonition-razonar admonition">
+<p class="admonition-title">Razonar</p>
+<p>¿En qué puerto se encuentra escuchando la aplicación?
+Si el servidor se encuentra en www.ieslaencanta.com ¿Cuál es la URL para ver el mensaje? ¿Qué método HTTP utiliza?</p>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</div><div aria-labelledby="tab-0-0-2" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-2" name="0-2" role="tabpanel" tabindex="0"><p>Hoja de estilos en cascada, originariamente creado para describir el aspecto y presentación de los documentos HTML (aunque también
+se utilizan entre otros en SVG o MathML), al igual que otras tecnologías ha sobrepasado el navegador utilizandose para el desarrollo
+de aplicaciones de escritorio.</p>
+<p>A lo largo del tiempo se han desarrollado diferentes versiones, encontrándose en la tercera versión CSS 3. Se basa en la definición de reglas
+en las que se selecciona un nodo o conjunto de nodos por su tipo, su id, su clase y/o la relación entre diferentes nodos como dentro de, adjunto, anterior, posterior… y después del selector
+entre llaves {} las propiedades que se aplican a los nodos que cumplan el selector.</p>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">Ejemplo selectores CSS 3</span><a class="headerlink" href="#id4" title="Enlace permanente a este código fuente"></a></div>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>#sidebar h2 {....}
+h2.title {....}
+h2 + p {....}
+#sidebar p:first-line {....}
+</pre></div>
+</div>
+</div>
+<p>Relacionado con CSS3 se han definido otras tecnologías que permiten automatizar y mejorar la escritura/gestión de hojas de estilo incluyendo
+características propias de los lenguajes de programación como las variables o los bucles , siendo las mas destacadas SASS y LESS.</p>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">Ejemplo fichero SASS</span><a class="headerlink" href="#id5" title="Enlace permanente a este código fuente"></a></div>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>$primary-color: orange;
+$secondary-color: gold;
+$font-stack: &#39;Open Sans&#39;, Helvetica, Sans-Serif;
+$border-thick: 10px;
+$border-bright: orange;
+$border-style: solid;
+$article-width: 60%;
+$article-padding: 20px;
+$article-margin: auto;
+​
+body {
+   color: $primary-color;
+   background: $secondary-color;
+   font-family: $font-stack;
+}
+article {
+   border: $border-thick $border-style $border-bright;
+   width: $article-width;
+   padding: $article-padding;
+   margin: $article-margin;
+}
+</pre></div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="tecnologias-en-el-servidor">
+<h2>Tecnologías en el servidor<a class="headerlink" href="#tecnologias-en-el-servidor" title="Enlace permanente a este encabezado"></a></h2>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-1-1-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-1-1-0" name="1-0" role="tab" tabindex="0">Servidores Web</button><button aria-controls="panel-1-1-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-1-1-1" name="1-1" role="tab" tabindex="-1">Servidores de aplicaciones</button><button aria-controls="panel-1-1-2" aria-selected="false" class="sphinx-tabs-tab" id="tab-1-1-2" name="1-2" role="tab" tabindex="-1">Lenguajes en el servidor</button><button aria-controls="panel-1-1-3" aria-selected="false" class="sphinx-tabs-tab" id="tab-1-1-3" name="1-3" role="tab" tabindex="-1">Otros servidores</button></div><div aria-labelledby="tab-1-1-0" class="sphinx-tabs-panel" id="panel-1-1-0" name="1-0" role="tabpanel" tabindex="0"><p>Elemento básico en las tecnologías web, en su versión más básica es un programa que se encuentra escuchando peticiones del protocolo
+HTTP en un puerto TCP, normalmente el 80. Inicialmente devolvía el recurso indicado en la petición, usualmente HTML, desarrollándose
+posteriormente la capacidad de pasar la petición a guiones o script externos (CGI) y cuya salida estándar es redirigida al cliente.</p>
+<p>Un ejemplo sencillo de CGI con Bash:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="nb">echo</span> <span class="s2">&quot;Content-type: text/html&quot;</span>
+<span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
+<span class="nb">echo</span> <span class="s1">&#39;&lt;html&gt;&#39;</span>
+<span class="nb">echo</span> <span class="s1">&#39;&lt;head&gt;&#39;</span>
+<span class="nb">echo</span> <span class="s1">&#39;&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;&#39;</span>
+<span class="nb">echo</span> <span class="s1">&#39;&lt;title&gt;Hello World&lt;/title&gt;&#39;</span>
+<span class="nb">echo</span> <span class="s1">&#39;&lt;/head&gt;&#39;</span>
+<span class="nb">echo</span> <span class="s1">&#39;&lt;body&gt;&#39;</span>
+<span class="nb">echo</span> <span class="s1">&#39;Hello World&#39;</span>
+<span class="nb">echo</span> <span class="s1">&#39;&lt;/body&gt;&#39;</span>
+<span class="nb">echo</span> <span class="s1">&#39;&lt;/html&gt;&#39;</span>
+<span class="nb">exit</span> <span class="m">0</span>
+</pre></div>
+</div>
+<p>Existen multitud de servidores web, incluso en los nuevos «frameworks» de desarrollo en diferentes lenguajes se incluye un servidor de pruebas.
+Estos servidores han ampliado su funcionalidad con el paso del tiempo sitios virtuales, gestión de usuarios, localización, SSL, caché, LDAP…</p>
+<p>Los más usados:</p>
+<ul>
+<li><p><strong>Apache</strong>. Servidor más usado en la actualidad, inicialmente para Unix, existen versiones para la mayor parte de los sistemas operativos. Escrito en C, su principal característica es la velocidad gracias a poder añadir y quitar funcionalidades usando módulos. Actualmente se encuentra en la versión 2.4.53.</p></li>
+<li><p><strong>Nginx</strong>. Segundo servidor más usado, se combina bien con Apache ya que puede funcionar como <a class="reference external" href="https://es.wikipedia.org/wiki/Servidor_proxy#Proxy_inverso">proxy inverso</a>. Usa menos memoria que Apache y también puede cargar módulos de forma dinámica. Algunas de sus características más destacadas:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Proxy inverso.</p></li>
+<li><p>Web Caché.</p></li>
+<li><p>Balanceo de carga.</p></li>
+<li><p>Soporte HHTP2 y experimentar 3.</p></li>
+<li><p>Proxy de correo POP3/IMAP.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Internet Information Service</strong>. Servidor de Microsoft para las versiones server de su sistema operativo. Muy integrado con sus lenguajes de programación C# o VB, para la web con ASP.Net, aunque puede soportar otros lenguajes como Python o PHP.</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/estadisticas_servidores.jpg"><img alt="&quot;estadísticas&quot;" class="align-center" src="_images/estadisticas_servidores.jpg" style="width: 450px;" /></a>
+</div><div aria-labelledby="tab-1-1-1" class="sphinx-tabs-panel" hidden="true" id="panel-1-1-1" name="1-1" role="tabpanel" tabindex="0"><p>La línea que separa los servidores web de los servidores de aplicaciones son difusos. Se define un servidor de aplicaciones
+como un sistema distribuido que proporciona  un entorno de ejecución para un <strong>programa de aplicación</strong>, pero esta definición también se puede dar actualmente en lo
+servidores web.
+Los servidores de aplicaciones se encuentran asociados a la tecnologia Java, en concreto <strong>Java EE</strong> ahora conocido como <strong>Jakarta EE</strong>, estos servidores han de cumplir con un estándar para poder ser certificados, proporcionando una serie de servicios adicionales que un servidor web no proporciona, como:</p>
+<ul class="simple">
+<li><p>Seguridad</p></li>
+<li><p>Registro</p></li>
+<li><p>Persistencia</p></li>
+<li><p>Gestión de recursos</p></li>
+<li><p>Herramientas administración y/o configuración</p></li>
+<li><p>Colas de mensaje</p></li>
+<li><p>XML</p></li>
+</ul>
+<p>No solo Java posee servidores de aplicaciones, si bien el término en el entorno profesional se asocia a Java, Microsoft con su plataforma <a class="reference external" href="https://dotnet.microsoft.com/en-us/">.NET</a> e IIS también
+implementa la filosifía de servidor de aplicaciones.</p>
+<p>En Jakarta Enterprise Edition se tiene diferentes tipos de archivos que encapsulas los elementos software, junto con ficheros especiales  que aportan información extra para
+configurar la aplicación y personalizar los recursos. Los tipos de archivos son:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>JAR. Contienen la lógica de negocio y el modelo con los EJB (Enterpriese Java Beans), que son un tipo especial de clases similares a los JavaBeans, pero que añaden funcionalidades extra como comunicación remota, transacciones, concurrencia o seguridad.</p></li>
+<li><p>WAR. En este caso para servidores certificados con el perfil. Tiene un archivo web.xml con la configuración en la carpeta WEB-IF.</p></li>
+<li><p>EAR. Ficheros comprimidos con toda la aplicación, para servidores de aplicaciones cerficados con el perfil Web. Puede contener ficheros JAR y WAR. En la carepta META-INF se tienen diferentes ficheros de configuración como application.xml (obligatorio), icon o security-role.</p></li>
+</ul>
+</div></blockquote>
+<div class="admonition seealso">
+<p class="admonition-title">Ver también</p>
+<p>Vídeo de la UPV sobre JEE, arquitecturas: <a class="reference external" href="https://www.youtube.com/watch?v=ko-1APvjMuQ">ARQUITECTURA DE LAS APLICACIONES JAVA ENTERPRISE EDITION</a>.</p>
+</div>
+<p>En Jakarta EE muchos de los servicios anteriores se proporcionan a través de API’s como JMS (Java Message Service). Por desgracia desde sus inicios JEE ha sido
+demasiado complejo en cuanto a mantenimiento, infraestructura y/o desarrollo. Actualmente se ha visto superado por el framewor <a class="reference external" href="https://spring.io/">Spring</a>. Al realizar una simple búsqueda de ofertas de empleo en un conocido portar se han encontrado ( a mediados 2022):</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>722 ofertas para Spring</p></li>
+<li><p>181 ofertas para J2EE o JEE</p></li>
+</ul>
+</div></blockquote>
+<div class="admonition seealso">
+<p class="admonition-title">Ver también</p>
+<p>Vídeo de la UPM sobre Spring y JEE: <a class="reference external" href="https://www.youtube.com/watch?v=ZbWrcuTfkYM">Introducción a Servidores Web con Spring</a>.</p>
+</div>
+<a class="reference internal image-reference" href="_images/jee_vs_spring.png"><img alt="&quot;JEE vs Spring&quot;" class="align-center" src="_images/jee_vs_spring.png" style="width: 450px;" /></a>
+<p>Los servidores JEE más conocidos son:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Glassfish.</strong> Software libre, desarrollado por Sun, última versión 2017.</p></li>
+<li><p><strong>WildFly.</strong> Creado por Red Hat, anteriormente conocido como JBoss, última versión en el 2021. También software libre.</p></li>
+<li><p><strong>Apache Tomcat.</strong> En este caso solo implementa el perfil web (menos funcionalidad). Desarrollado por la Apache Fundatión, sofware libre.</p></li>
+<li><p><strong>Apache TomEE.</strong> Ampliación de Tomcat que cumple de forma completa con el estádar JEE.</p></li>
+<li><p>Otros como Apache Jeronimo, Jetty o JOnAS, aunque muchos de ellos son proyectos avandonados hace años</p></li>
+</ul>
+</div></blockquote>
+<figure class="align-center" id="id6">
+<a class="with-border reference internal image-reference" href="_images/web_profile.jpg"><img alt="_images/web_profile.jpg" class="with-border" src="_images/web_profile.jpg" style="width: 450px;" /></a>
+<figcaption>
+<p><span class="caption-text">Perfiles JEE</span><a class="headerlink" href="#id6" title="Enlace permanente a esta imagen"></a></p>
+</figcaption>
+</figure>
+</div><div aria-labelledby="tab-1-1-2" class="sphinx-tabs-panel" hidden="true" id="panel-1-1-2" name="1-2" role="tabpanel" tabindex="0"><dl class="simple">
+<dt>Su función es a partir de la peticón HTTP entregada por el servidor junto con cualquier otra información disponible y necesaria, procesar dicha peticiónaciendo,</dt><dd><p>realizar las acciones necesarias (base de datos, servicios web…), fabricar la respuesta y devolverla al servidor para que la envie al cliente.</p>
+</dd>
+</dl>
+<p>A lo largo del tiempo se ha producido también una evolución en los lenguajes de servidor:</p>
+<p><strong>Inicios.</strong> En las primeras páginas web (no podía considerarse como aplicación) los contendidos eran estáticos, es decir, un simple fichero
+HTML que el servidor leia y enviaba al cliente. Para modificar el contenido de la web era necesario editar a mano el contenido del HTML.</p>
+<p><strong>Primeros lenguajes en el servidor.</strong> La siguiente evolución fue llamar a guiones con lenguajes del propio sistema operativo conocidos como CGI, por ejemplo usando Bash. Esta solución
+tenía una serie de problemas muy importantes, como el manejo de QueryString, la comunicación con base de datos o la escritura usando la salida estándar
+de código HTML.</p>
+<p><strong>Lenguajes especializados.</strong> Aparecen los primeros lenguajes o adaptaciones de lenguajes ya usados para la generación de páginas web. Sucede a principios de siglo y solucionan en parte
+las carencias de los CGI. Aparece el concepto de sesión, aplicación, obtención de forma automática de los parámetros de entrada o integración de HTML y lenguaje de
+servidor ( Consiste en definir una página web en HTML e insertar en los lugares necesarios código especiales que son ejecutados.). Los lenguaes más destacados de esa época fueron (algunos siguien siéndolo).</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>PHP.</strong> El servidor llama a un intérprete, que va analizando el fichero y cuando encuentra la apertura de código <strong>&lt;?</strong> ejecuta dicho código hasta encontrar el cierre <strong>?&gt;</strong>. Inicialmente era un lenguaje estructurado.</p></li>
+<li><p><strong>ASP.</strong> Tecnología de Microsoft para funcionar sobre IIS. El lenguaje era VisualBasic. Sustituido por ASP.NET.</p></li>
+<li><p><strong>JSP.</strong> Previamente a los JSP aparecieron los servlets, estos son clases pensadas para responder a solicitudes Http de forma similar a los CGI. La evolución fueron los JSP, que de igual forma que PHP o ASP permiten escribir HTML insertando código ejecutable dentro de la etiqueta: <strong>&lt;%</strong> código Java … <strong>&lt;%&gt;</strong>. La primera vez que se ejecuta el JSP se «compila» a un servlet.</p></li>
+</ul>
+</div></blockquote>
+<p>Algunos ejemplo de código en PHP, ASP, JSP y Servlets extraidos de la Wikipedia y W3schools:</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-2-2-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-2-2-0" name="2-0" role="tab" tabindex="0">PHP</button><button aria-controls="panel-2-2-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-2-2-1" name="2-1" role="tab" tabindex="-1">ASP</button><button aria-controls="panel-2-2-2" aria-selected="false" class="sphinx-tabs-tab" id="tab-2-2-2" name="2-2" role="tab" tabindex="-1">JSP</button><button aria-controls="panel-2-2-3" aria-selected="false" class="sphinx-tabs-tab" id="tab-2-2-3" name="2-3" role="tab" tabindex="-1">Servlets</button></div><div aria-labelledby="tab-2-2-0" class="sphinx-tabs-panel" id="panel-2-2-0" name="2-0" role="tabpanel" tabindex="0"><div class="highlight-PHP notranslate"><div class="highlight"><pre><span></span><span class="x">&lt;!DOCTYPE html&gt;</span>
+<span class="x">&lt;html lang=&quot;es&quot; dir=&quot;ltr&quot;&gt;</span>
+
+<span class="x">   &lt;head&gt;</span>
+<span class="x">   &lt;meta charset=&quot;UTF-8&quot; /&gt;</span>
+<span class="x">   &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;</span>
+<span class="x">   &lt;title&gt;Ejemplo básico PHP&lt;/title&gt;</span>
+<span class="x">   &lt;/head&gt;</span>
+
+<span class="x">   &lt;body&gt;</span>
+<span class="x">   </span><span class="cp">&lt;?php</span>
+      <span class="k">echo</span> <span class="s1">&#39;Hola mundo&#39;</span><span class="p">;</span>
+   <span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">   &lt;/body&gt;</span>
+
+<span class="x">&lt;/html&gt;</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-2-2-1" class="sphinx-tabs-panel" hidden="true" id="panel-2-2-1" name="2-1" role="tabpanel" tabindex="0"><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;es&quot; dir=&quot;ltr&quot;&gt;
+
+   &lt;head&gt;
+   &lt;meta charset=&quot;UTF-8&quot; /&gt;
+   &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+   &lt;title&gt;Ejemplo básico ASP&lt;/title&gt;
+   &lt;/head&gt;
+
+   &lt;body&gt;
+   &lt;%response.write(&quot;Hello World!&quot;)%&gt;
+   &lt;/body&gt;
+
+&lt;/html&gt;
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-2-2-2" class="sphinx-tabs-panel" hidden="true" id="panel-2-2-2" name="2-2" role="tabpanel" tabindex="0"><div class="highlight-jsp notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;html&gt;</span>
+   <span class="nt">&lt;head&gt;&lt;title&gt;</span>First JSP<span class="nt">&lt;/title&gt;&lt;/head&gt;</span>
+   <span class="nt">&lt;body&gt;</span>
+   <span class="k">&lt;%</span>
+      <span class="kt">double</span> <span class="n">num</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">random</span><span class="o">();</span>
+      <span class="k">if</span> <span class="o">(</span><span class="n">num</span> <span class="o">&gt;</span> <span class="mf">0.95</span><span class="o">)</span> <span class="o">{</span>
+   <span class="k">%&gt;</span>
+         <span class="nt">&lt;h2&gt;</span>You&#39;ll have a luck day!<span class="nt">&lt;/h2&gt;&lt;p&gt;</span>(<span class="k">&lt;%=</span> <span class="n">num</span> <span class="k">%&gt;</span>)<span class="nt">&lt;/p&gt;</span>
+   <span class="k">&lt;%</span>
+      <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+   <span class="k">%&gt;</span>
+         <span class="nt">&lt;h2&gt;</span>Well, life goes on ... <span class="nt">&lt;/h2&gt;&lt;p&gt;</span>(<span class="k">&lt;%=</span> <span class="n">num</span> <span class="k">%&gt;</span>)<span class="nt">&lt;/p&gt;</span>
+   <span class="k">&lt;%</span>
+      <span class="o">}</span>
+   <span class="k">%&gt;</span>
+   <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;</span><span class="k">&lt;%=</span> <span class="n">request</span><span class="o">.</span><span class="na">getRequestURI</span><span class="o">()</span> <span class="k">%&gt;</span><span class="s">&quot;</span><span class="nt">&gt;&lt;h3&gt;</span>Try Again<span class="nt">&lt;/h3&gt;&lt;/a&gt;</span>
+   <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-2-2-3" class="sphinx-tabs-panel" hidden="true" id="panel-2-2-3" name="2-3" role="tabpanel" tabindex="0"><div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.pruebas</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.PrintWriter</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.servlet.ServletException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.servlet.http.HttpServlet</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.servlet.http.HttpServletRequest</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.servlet.http.HttpServletResponse</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">HolaSextoInformaticaServlet</span> <span class="kd">extends</span> <span class="n">HttpServlet</span> <span class="o">{</span>
+
+   <span class="cm">/**</span>
+<span class="cm">   * Servlet de ejemplo que procesa una petición GET</span>
+<span class="cm">   * @param request</span>
+<span class="cm">   * @param response</span>
+<span class="cm">   * @throws ServletException</span>
+<span class="cm">   * @throws IOException</span>
+<span class="cm">   */</span>
+   <span class="nd">@Override</span>
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">doGet</span><span class="o">(</span><span class="n">HttpServletRequest</span> <span class="n">request</span><span class="o">,</span> <span class="n">HttpServletResponse</span> <span class="n">response</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">ServletException</span><span class="o">,</span> <span class="n">IOException</span> <span class="o">{</span>
+      <span class="n">response</span><span class="o">.</span><span class="na">setContentType</span><span class="o">(</span><span class="s">&quot;text/html&quot;</span><span class="o">);</span>
+      <span class="n">PrintWriter</span> <span class="n">out</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="na">getWriter</span><span class="o">();</span>
+      <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;&lt;!DOCTYPE HTML PUBLIC \&quot;-//W3C//DTD HTML 4.0 Transitional//EN\&quot;&gt;&quot;</span><span class="o">);</span>
+      <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;&lt;html&gt;&quot;</span><span class="o">);</span>
+      <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;&lt;head&gt;&lt;title&gt;Ejemplo HolaSextoInformatica&lt;/title&gt;&lt;/head&gt;&quot;</span><span class="o">);</span>
+      <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;&lt;body&gt;&quot;</span><span class="o">);</span>
+      <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;&lt;h1&gt;¡Hola HolaSextoInformatica!&lt;/h1&gt;&quot;</span><span class="o">);</span>
+      <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;&lt;/body&gt;&lt;/html&gt;&quot;</span><span class="o">);</span>
+      <span class="n">out</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div></div>
+<p><strong>Evolucion.</strong> Para pequeñas aplicaciones mezclar HTML, CSS y lenguajes de servidor puede ser manejable aunque poco mantenible, en aplicaciones grandes es prácticamente imposible el desarrollo y mantenimiento, apareciendo nuevos lenguajes y entornos
+de trabajo o «frameworks» que dotan a las aplicaciones web de estructura y llevan la ingeniería del softaware a la web. Destaca también la aparición del modelo o patrón Modelo-Vista-Controlador o MVC y la división entre Front-End y BackEnd.</p>
+<div class="admonition-video admonition">
+<p class="admonition-title">Vídeo</p>
+<p><strong>(Recomendado)</strong> Vídeo sobre el patrón <cite>MVC &lt;https://www.youtube.com/watch?v=pCvZtjoRq1I&gt;</cite></p>
+</div>
+<p>Algunos de los lenguajes y frameworks:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Laravel.</strong> <a class="reference external" href="https://laravel.com/">Laravel web.</a> Framework PHP que implementa el modelo MVC, influenciado por Ruby on Rails, integra ORM (Eloquet), CLI para crear código y motor de plantillas (Blade) entre otros.</p></li>
+<li><p><strong>Symfony.</strong> <a class="reference external" href="https://symfony.es/">Symfony</a> Otro de los más usado en PHP, también basado en el patrón MVC, utiliza otros ORM (Doctrine 2, Proper) y otro motor de plantillas (Twing)</p></li>
+<li><p><strong>Ruby on Rails.</strong> <a class="reference external" href="https://rubyonrails.org/">Ruby on Rails</a> Lenguaje y framework para el desarrollo web.</p></li>
+<li><p><strong>Python.</strong> Lenguaje que si bien inicialmente no era muy usado en la web, actualmente se ha extendido, los frameworks más utilizados son <cite>DJango &lt;https://www.djangoproject.com/&gt;</cite> y  <a class="reference external" href="https://flask.palletsprojects.com/en/2.1.x/">Flask</a>.</p></li>
+<li><p><strong>Spring.</strong> Framework para Java, aunque posee multitud de proyectos, se ha convertido en una seria alternativa a Jakarta (antes JEE) en el entorno profesional.</p></li>
+<li><p><strong>NodeJs.</strong> Página oficial de <cite>NodeJS &lt;https://nodejs.org/es/&gt;</cite> En este caso el lenguaje de servidor es el mismo que en el cliente: Javascript, usando el motor V8 para la ejecución del código. Posee una gran comunidad, muchas librerías y diferentes frameworks como <cite>Express.js &lt;https://expressjs.com/es/&gt;</cite> con una curva de aprendizaje baja.</p></li>
+</ul>
+</div></blockquote>
+<p><strong>Estado actual.</strong> Actualmente existe una gran variedad de lenguajes, frameworks y herramientas para el desarrollo web, se tiende en la industria en general y en el desarrollo web en la integración continua y las prácticas DevOps, en la que se desarrolla de forma continua
+con el uso de diferentes herramientas, en especial la de pruebas, gestión de librerías, gestión de versiones y automatización de tareas. Junto con la aparición de nuevas arquitecturas como MVVC o Hexagonal.</p>
+<div class="admonition-video admonition">
+<p class="admonition-title">Vídeo</p>
+<p><strong>(Recomendado)</strong> Vídeo sobre la variación del patrón MVVC a  <cite>MVVC &lt;https://www.youtube.com/watch?v=yetcdboGeCw&gt;</cite></p>
+</div>
+</div><div aria-labelledby="tab-1-1-3" class="sphinx-tabs-panel" hidden="true" id="panel-1-1-3" name="1-3" role="tabpanel" tabindex="0"><p>Además de un servidor, ya sea de aplicaciones o web y un cliente son necesarios otros elementos para su uso, en especial servidores
+que ofrecen servicios relacionadas con la web. Los principales servidores que completan la arquitecturas web son:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Servidor de ficheros.</strong> FTP. Servidor que permite la transferencia de ficheros entre máquinas, por ejemplo subir o actualiza el sitio web en el servidor web.</p></li>
+<li><p><strong>Servidor de directorio.</strong> Existen diferentes servidores de directorio, siendo el más conocido OpenLDAP que implemente el protolocolo LDAP. Su función es la de almacenar y recuperar información jerárquica, con muchas más lecturas que escrituras. Tiene múltiples usos (por ejemplo Active Directory), pero en la web se usa como elemento centralizado para la validación de usuarios en varias aplicaciones y/o sistemas.</p></li>
+<li><p><strong>Servidor de nombres.</strong> DNS.Los equipos se identifican con su dirección IP, pero a los humanos les cuesta recordar números y menos palabras, el servidor de nombres o DNS es un sistema jerárquico distribuido que permite dada una ip obtener el nombre y a la inversa, dada un nombre obtener la ip. Recordar que en el paquete IP la dirección es una IP no un nombre.</p></li>
+<li><p><strong>Servidor de correo.</strong> No relacionado directamente con la web, pero si ampliamente utilizado, puede implementar los protocolos SMTP, POP e IMAP.</p></li>
+<li><p><strong>Servidor de hora.</strong> NTP. Utilizado para la sincronización de la hora de otros equipos, en especial servidores, por ejemplo en un «cloud»</p></li>
+</ul>
+</div></blockquote>
+<p>Existen muchos otros servidores como SSH, Telnet , de base de datos, irc, propios (puerto &gt;1023)…</p>
+<div class="admonition-investigar admonition">
+<p class="admonition-title">Investigar</p>
+<p>¿Qué es un puerto de comunicaciónes en TCP/IP? ¿Qué dos tipos existen? ¿Qué características tienen? Indicar para los servidores anteriores los puertos que usa, junto con el de HTTP</p>
+</div>
+</div></div>
+</section>
+<section id="tecnologias-de-despliegue">
+<h2>Tecnologías de despliegue<a class="headerlink" href="#tecnologias-de-despliegue" title="Enlace permanente a este encabezado"></a></h2>
+<blockquote>
+<div><p>El despliegue de aplicaciones tanto nativas como Web a pasado se ser simplemente una compilación a convertirse en un factor imporante en la indústria
+informática. Algunas de las tareas típicas en el desarrollo de una aplicación web son:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Desarrollar el front-end.</p></li>
+<li><p>Desarrolalr el back-end.</p></li>
+<li><p>Compilacion, transpilación, empaquetado…</p></li>
+<li><p>Pasar  test independientes.</p></li>
+<li><p>Añadir los cambios a los repositorios</p></li>
+<li><p>Integrar.</p></li>
+<li><p>Pasar test conjuntos.</p></li>
+<li><p>Si los test han pasado, desplegar en servidores de preproducción o pruebas más detallados.</p></li>
+<li><p>Pasar a producción.</p></li>
+</ul>
+</div></blockquote>
+<p>Estas tareas llevan tiempo y pueden dar problemas en caso de no hacerse correctamente, existiendo diferentes herramientas
+como:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Jenkins: Servidor de automatización, muy utilizado permite definir flujos de trabajo con gestor de versiones, herramientas de compilación como Mave o Ant, línea de comandos…</p></li>
+<li><p>Deployer: Para PHP, permite especificar las versiones que se suben al servidor e intercambiarlas.</p></li>
+<li><p>Gulp: Para Javascript, aunque se puede usar en diferentes lenguajes, herramienta para la automatización de tareas.</p></li>
+<li><p>Octopus Deploy: Similar a las anteriores, de pago, encaminado a DevOps e integración continua.</p></li>
+<li><p>Bamboo: Herramienta de automatización para una integración continua.</p></li>
+<li><p>GitHub Actions: Automatización de todos sus flujos de trabajo de software. Definen diferentes conceptos como flujo de trabajo, eventos o trabajos.</p></li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<p>Estás herramientas se usan en la metodología de moda DevOps e Integración continua, en los siguientes vídeos se explica de forma sencilla los fundamentes de ambos conceptos:</p>
+<blockquote>
+<div><div class="admonition-video admonition">
+<p class="admonition-title">Vídeo</p>
+<p>Fundamentos de DevOps en 3 minutos: <a class="reference external" href="https://www.youtube.com/watch?v=p-bOnV8FRMQ">DevOps</a>.</p>
+</div>
+<div class="admonition-video admonition">
+<p class="admonition-title">Vídeo</p>
+<p>Integración continua con <a class="reference external" href="https://www.youtube.com/watch?v=SOj64CrWYY8">CodeTv</a>.</p>
+</div>
+</div></blockquote>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pie de página">
+        <a href="http.html" class="btn btn-neutral float-left" title="Protocolo HTTP" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="modelos.html" class="btn btn-neutral float-right" title="Modelos de arquitecturas web" accesskey="n" rel="next">Siguiente <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Derechos de autor 2022, Pedro A. Santiago.</p>
+  </div>
+
+  Compilado con <a href="https://www.sphinx-doc.org/">Sphinx</a> usando un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a>
+    proporcionado por <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

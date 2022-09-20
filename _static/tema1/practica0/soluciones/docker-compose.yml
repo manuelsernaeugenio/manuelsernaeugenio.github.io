@@ -1,0 +1,32 @@
+version: "3.9"
+services:
+  db:
+    image: mariadb:10.3
+    networks:
+      - in
+    volumes:
+      - db_datas:/var/lib/mysql
+    
+    restart: always
+    environment:
+        MYSQL_ROOT_PASSWORD: phpmyadmin
+        MYSQL_DATABASE: mysql
+        MYSQL_USER: phpmyadmin
+        MYSQL_PASSWORD: phpmyadmin
+  phpmyadmin:
+      depends_on:
+        - db
+      image: phpmyadmin/phpmyadmin
+      ports:
+        - "8082:80"
+      restart: always
+      environment:
+        - PMA_HOST=db
+        - PMA_ARBITRARY=1
+      networks:
+        - in
+      
+volumes:
+  db_datas:
+networks:
+    in: {}

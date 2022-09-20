@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Protocolo HTTP &mdash; documentación de DAW. Módulo: Despliegue de aplicaciones web. - </title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/translations.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="Tecnologías web" href="tecnologias.html" />
+    <link rel="prev" title="Arquitecturas web" href="arquitectura.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> DAW. Módulo: Despliegue de aplicaciones web.
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Buscar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduccion.html">Introducción</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arquitectura.html">Arquitecturas web</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Protocolo HTTP</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduccion">Introducción</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#funcionamiento-basico">Funcionamiento básico</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#comunicacion-http">Comunicación HTTP</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#formato-del-mensaje">Formato del mensaje</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#metodos-de-peticion-request">Métodos de petición (Request)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#metodo-de-respuestas-response">Método de respuestas (Response)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#esquema-de-una-comunicacion">Esquema de una comunicación</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#encabezados-http">Encabezados Http</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tipos-mime">Tipos Mime</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tecnologias.html">Tecnologías web</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modelos.html">Modelos de arquitecturas web</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">DAW. Módulo: Despliegue de aplicaciones web.</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Protocolo HTTP</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="protocolo-http">
+<h1>Protocolo HTTP<a class="headerlink" href="#protocolo-http" title="Enlace permanente a este encabezado"></a></h1>
+<section id="introduccion">
+<h2>Introducción<a class="headerlink" href="#introduccion" title="Enlace permanente a este encabezado"></a></h2>
+<p>HTTP es un protocolo de nivel de aplicación diseñado para la tranferencia de hipertexto <strong>sin estado</strong>, su primera versión (HTTP 1.0)
+se basa en una comunicación extremandamente sencilla: Petición/respuesta.</p>
+<p>Inicialmente diseñador para la web, se ha convertido en un estándar para la comunicación entre aplicaciones con
+los servicios web y REST.</p>
+</section>
+<section id="funcionamiento-basico">
+<h2>Funcionamiento básico<a class="headerlink" href="#funcionamiento-basico" title="Enlace permanente a este encabezado"></a></h2>
+<p>La petición de un recursos disponible a través de HTTP (normalmente una página HTML, aunque puede ser un JSON…) se realiza enviando un
+dato (nombre de la unidad de datos a nivel de aplicación, por ejemplo a nivel de red se denomina paquete). Básicamente, esta unidad de
+datos se compone del dominio, el puerto, la ruta y opcionalmente una lista de atributos para personalizar la solicitud:</p>
+<p><a class="reference external" href="http://[dominio">http://[dominio</a> o ip]:[puerto]/[ruta_recurso]?[atributo]</p>
+<p>Ejemplos:</p>
+<blockquote>
+<div><p><a class="reference external" href="http://www.debian.org:80/index.html">http://www.debian.org:80/index.html</a></p>
+<p><a class="reference external" href="https://www.google.es/search?q=http+2.0&amp;ie=utf-8&amp;oe=utf-8&amp;client=firefox&amp;gfe_rd=cr">https://www.google.es/search?q=http+2.0&amp;ie=utf-8&amp;oe=utf-8&amp;client=firefox&amp;gfe_rd=cr</a></p>
+</div></blockquote>
+<p>El servidor procesa la solicitud, a partir del recurso solicitado y los parámetros o atributos facilitados, devolviendo la respuesta en un dato de tipo HTTP, que contendrá
+el contenido de la respuesta, que puede ser HTML, JSON, XML, JPG….
+Una vez devuelta la respuesta el servidor cierra la conexión  (en HTTP 1.0), siendo necesaria abrir otra nueva conexión para solicitar otro recurso.</p>
+<section id="comunicacion-http">
+<h3>Comunicación HTTP<a class="headerlink" href="#comunicacion-http" title="Enlace permanente a este encabezado"></a></h3>
+<p>El intercambio de información entre el cliente y el servidor web se concreta mediante mensajes,
+que según la especificación del protocolo son las peticiones que se realizan entre cliente y servidor,
+así como las respuestas en sentido inverso. El contenido de dichos mensajes son líneas de texto, cada una de las cuales contiene
+las órdenes y parámetros con la sintaxis definida por el protocolo HTTP.</p>
+</section>
+</section>
+<section id="formato-del-mensaje">
+<h2>Formato del mensaje<a class="headerlink" href="#formato-del-mensaje" title="Enlace permanente a este encabezado"></a></h2>
+<p>Dado que se trata de un protocolo sin estado, cada transacción HTTP es una comunicación distinta. Existen dos tipos de mensajes,
+los de petición o solicitud (<strong>Request</strong>) y los de respuesta (<strong>Response</strong>), cada uno con una sintaxis determinada.
+El formato de un mensaje genérico en HTTP es el siguiente:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Línea de comienzo: tipo de mensaje (orden HTTP con sus parámetros, Request, o resultado de la solicitud, Response).</p></li>
+<li><p>Líneas de encabezado (si son obligatorias) o cero (si son opcionales), acabadas con un salto de línea CR-LF (es decir, un retorno de carro CR y a continuación una línea LF).</p></li>
+<li><p>Separador, que no es más que otro CR-LF.</p></li>
+<li><p>Por último, el contenido o cuerpo del mensaje.</p></li>
+</ol>
+</div></blockquote>
+<section id="metodos-de-peticion-request">
+<h3>Métodos de petición (Request)<a class="headerlink" href="#metodos-de-peticion-request" title="Enlace permanente a este encabezado"></a></h3>
+<p>Una petición HTTP, en su formato más básico, tiene la sintaxis:</p>
+<p>​  <code class="docutils literal notranslate"><span class="pre">método,</span> <span class="pre">espacio</span> <span class="pre">en</span> <span class="pre">blanco,</span> <span class="pre">URI,</span> <span class="pre">espacio</span> <span class="pre">en</span> <span class="pre">blanco</span> <span class="pre">y</span> <span class="pre">versión.</span></code></p>
+<p>El método le indica al servidor qué debe hacer con el URI. Por último, la versión indica el número de versión del protocolo que el cliente entiende. Por ejemplo, una petición normal utiliza el método GET para demandar del servidor el URI solicitado, y su sintaxis sería: GET /index.htm HTTP/1.1
+La versión 1.0 de HTTP contempla tres métodos, que son:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>GET</strong> (utilizado para obtener cualquier tipo de información del servidor, siendo el método invocado cuando se realiza un clic sobre un enlace). En caso de respuesta positiva (200 OK), GET devuelve la representación en un formato concreto: HTML, XML, JSON o imágenes, JavaScript, CSS, etc. En caso de respuesta negativa devuelve 404 (not found) o 400 (bad request)</p></li>
+<li><p><strong>HEAD</strong> (parecido a GET pero el servidor no devuelve el contenido en el HTTP response) Con este método el navegador puede comprobar si un documento se ha modificado, por razones de cacheo. Puede comprobar también directamente si el archivo existe.</p></li>
+<li><p><strong>POST</strong> (dedicado al envío de información desde el cliente). En caso de respuesta positiva devuelve 201 (created). Los POST requests se envían normalmente con formularios.</p></li>
+</ul>
+</div></blockquote>
+<p>La versión posterior del HTTP, la 1.1, amplía estas posibilidades, implementando nuevos métodos, surgidos de las propias necesidades, sobre todo de la WWW.
+Algunos de estos métodos son :</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>PUT</strong>. Para enviar el recurso objeto de la URL del cliente al servidor, utilizado normalmente para actualizar contenidos. En caso de éxito devuelve 201 (created, en caso de que la acción haya creado un elemento) o 204 (no response, si el servidor no devuelve ningún contenido)</p></li>
+<li><p><strong>DELETE</strong>. Se utiliza para borrar el recurso solicitado del servidor, si se elimina correctamente devuelve 200.</p></li>
+<li><p><strong>OPTIONS</strong>. Método con el que el cliente obtiene información del servidor y poder negociar los valores de los parámetros de la comunicación, etcétera.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="metodo-de-respuestas-response">
+<h3>Método de respuestas (Response)<a class="headerlink" href="#metodo-de-respuestas-response" title="Enlace permanente a este encabezado"></a></h3>
+<p>La sintaxis de una respuesta HTTP es una línea de estado con  estructura fija, donde se indica versión, código de error y texto explicativo. Ejemplo:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">HTTP/1.1</span>&#160;&#160; <span class="pre">405</span>&#160;&#160; <span class="pre">Method</span> <span class="pre">Not</span> <span class="pre">Allowed</span></code></p>
+</div></blockquote>
+<p>o, si es satisfactoria:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">HTTP/1.1</span>&#160;&#160; <span class="pre">200</span>&#160;&#160; <span class="pre">OK</span></code></p>
+</div></blockquote>
+<p>Los códigos de estado se identifican con números de tres cifras, y se clasifican en cinco grupos, según sean informativos (con códigos 1xx), éxito de la solicitud (códigos 2xx), redireccionar la solicitud (códigos 3xx), error generado por el cliente  (códigos 4xx), o errores generados en el servidor (códigos 5xx).
+Son respuestas típicas los códigos:</p>
+<blockquote>
+<div><blockquote>
+<div><ul class="simple">
+<li><p>200, para indicar ok de la petición.</p></li>
+<li><p>201: Created. Creado.</p></li>
+<li><p>Error 403: Forbidden. Prohibido</p></li>
+<li><p>Error  404, para indicar que el objeto solicitado no está disponible (por ejemplo, porque no existe, caso típico de una url mal introducida por el usuario).</p></li>
+<li><p>Error 500: Internal Server Error. Error interno del servidor.</p></li>
+<li><p>Error 503: Service Unavailable. Servicio no disponible.</p></li>
+</ul>
+</div></blockquote>
+<p>Ejemplo de un diálogo HTTP:</p>
+<blockquote>
+<div><p>Para obtener un recurso con el URL <a class="reference external" href="http://www.example.com/index.html">http://www.example.com/index.html</a>
+#. Se abre una conexión al host www.example.com, puerto 80 que es el puerto por defecto para HTTP.
+#. Se envía un mensaje en el estilo siguiente:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/index.html</span> <span class="pre">HTTP/1.1</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Host:</span> <span class="pre">www.example.com</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">User-Agent:</span> <span class="pre">nombre-cliente</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">[Línea</span> <span class="pre">en</span> <span class="pre">blanco]</span></code></p>
+</div></blockquote>
+<p>La respuesta del servidor está formada por encabezados seguidos del recurso solicitado, en el caso de una página web:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">HTTP/1.1</span> <span class="pre">200</span> <span class="pre">OK</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Date:</span> <span class="pre">Fri,</span> <span class="pre">31</span> <span class="pre">Dec</span> <span class="pre">2016</span> <span class="pre">23:59:59</span> <span class="pre">GMT</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Content-Type:</span> <span class="pre">text/html</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Content-Length:</span> <span class="pre">1221</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">[Línea</span> <span class="pre">en</span> <span class="pre">blanco]</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;html&gt;</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;body&gt;</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;h1&gt;Página</span> <span class="pre">principal</span> <span class="pre">de</span> <span class="pre">tuHost&lt;/h1&gt;</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">(Contenido</span> <span class="pre">html)</span></code>
+<code class="docutils literal notranslate"><span class="pre">...</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;/body&gt;</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;/html&gt;</span></code></p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>Todos los campos contemplados en los métodos de respuesta pueden ser consultados en la sección adecuada (Response Header Field) del documento de la W3C correspondiente al RFC 2616 (<a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616.html">http://www.w3.org/Protocols/rfc2616/rfc2616.html</a>).
+Anexo 1: Códigos de error más comunesi</p>
+</section>
+<section id="esquema-de-una-comunicacion">
+<h3>Esquema de una comunicación<a class="headerlink" href="#esquema-de-una-comunicacion" title="Enlace permanente a este encabezado"></a></h3>
+<p>Después de lo expuesto, es posible presentar de nuevo, con más detalle, la estructura de un proceso de comunicación típica. Las etapas serían:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Un programa cliente establece la conexión con un servidor web.</p></li>
+<li><p>El cliente envía una petición indicando el método, la URI a la que pretende acceder y la versión del protocolo. Además, se pueden enviar diversos encabezados HTTP.</p></li>
+<li><p>El servidor responde con una línea de estado, que incluye la versión de protocolo, un código de éxito o error y el texto explicativo correspondiente a dicho código. Además, se enviarán varios encabezados HTTP adicionales. Finalmente, dentro del cuerpo del mensaje aparecerán los datos solicitados.</p></li>
+<li><p>El programa servidor cierra la conexión.</p></li>
+</ol>
+</div></blockquote>
+</section>
+</section>
+<section id="encabezados-http">
+<h2>Encabezados Http<a class="headerlink" href="#encabezados-http" title="Enlace permanente a este encabezado"></a></h2>
+<p>Los encabezados (o cabeceras) de los mensajes constituyen un campo fundamental, ya que definen en gran parte la información que se intercambia entre clientes y servidores, dándole así flexibilidad al protocolo.
+Estas líneas permiten que se envíe información descriptiva en la propia transacción, permitiendo, por ejemplo, la autenticación o identificación de usuarios.
+La sintaxis de una línea simple de encabezado se compone del nombre de encabezado, seguido de dos puntos, y el valor correspondiente:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">NOMBRE-DE-ENCABEZADO:</span> <span class="pre">VALOR</span></code></p>
+<p>Ej:  <code class="docutils literal notranslate"><span class="pre">Date:</span> <span class="pre">Tue,</span> <span class="pre">10</span> <span class="pre">Nov</span> <span class="pre">2015</span> <span class="pre">11:56:29</span> <span class="pre">GMT</span></code></p>
+</div></blockquote>
+<dl class="simple">
+<dt>Los encabezados http se pueden clasificar en grupos:</dt><dd><ul class="simple">
+<li><p>De ámbito general: manejan información que puede ser utilizada tanto por clientes como por servidores, ya que se aplican a una sesión completa de comunicación.</p></li>
+<li><p>De solicitud: los utiliza el cliente para enviar información adicional al servidor, en sus peticiones de algún servicio.</p></li>
+<li><p>De respuesta: utilizados por el servidor para enviar información añadida al cliente.</p></li>
+<li><p>De entidad: con información relacionada directamente con el recurso que se le va a proporcionar al cliente.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Todos los campos posibles, con la explicación de cada uno, de las líneas de los encabezados HTTP pueden ser consultados en la sección adecuada (Header Field Definition) del documento de la W3C correspondiente al RFC 2616. <a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616.html">http://www.w3.org/Protocols/rfc2616/rfc2616.html</a>
+Estas propuestas están en constante evolución, ya que existen nuevos documentos para poder estandarizar la forma y formato de las nuevas extensiones al protocolo HTTP.</p>
+<p>Encabezados HTTP más habituales</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Server: indica el tipo de servidor HTTP empleado.</p></li>
+<li><p>Age: indica el tiempo que ha estado el objeto servidor almacenado en un proxy cache (en segundos)</p></li>
+<li><p>Cache-control: lo usa el servidor para decirle al navegador que objetos cachear, durante cuanto tiempo, etc..</p></li>
+<li><p>Content-Encoding: se indica el tipo de codificación de caracteres empleado en la respuesta</p></li>
+<li><p>Expires: indica una fecha y hora a partir del cual la respuesta HTTP se considera obsoleta. Usado para gestionar caché.</p></li>
+<li><p>Location: usado para especificar una nueva ubicación en casos de redirecciones.</p></li>
+<li><p>Set-Cookie: sirve para crear cookies. Las famosos cookies viajan entre el servidor y el navegador a través de estas cabeceras HTTP.</p></li>
+</ul>
+</div></blockquote>
+<p>Uno de los encabezados más importantes es el  llamado <strong>user-Agent</strong> que consiste en que cuando un usuario accede a una página web, el navegador generalmente envía una cadena de texto que identifica al agente de usuario ante el servidor. Este texto forma parte del pedido a través de HTTP, llevando como prefijo User-agent: o User-Agent: y generalmente incluye información como el nombre de la aplicación, la versión, el sistema operativo, y el idioma.
+Esta identificación se puede cambiar.</p>
+<p>por ejemplo, el user-agent que utiliza Internet Explorer 8 sobre Windows 7:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">Mozilla/4.0</span> <span class="pre">(compatible;</span> <span class="pre">MSIE</span> <span class="pre">8.0;</span> <span class="pre">Windows</span> <span class="pre">NT</span> <span class="pre">6.1;</span> <span class="pre">Trident/4.0)</span></code></p>
+</div></blockquote>
+<p>y el Chrome 3.0 en Windows 7:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">Mozilla/5.0</span> <span class="pre">(Windows;</span> <span class="pre">U;</span> <span class="pre">Windows</span> <span class="pre">NT</span> <span class="pre">6.1;</span> <span class="pre">en-US)</span> <span class="pre">AppleWebKit/532.0</span> <span class="pre">(KHTML,</span> <span class="pre">like</span> <span class="pre">Gecko)</span> <span class="pre">Chrome/3.0.195.38</span> <span class="pre">Safari/532.0</span></code></p>
+</div></blockquote>
+</section>
+<section id="tipos-mime">
+<h2>Tipos Mime<a class="headerlink" href="#tipos-mime" title="Enlace permanente a este encabezado"></a></h2>
+<p>Los tipos MIME son una forma abierta y extensible de representar el contenido de los datos. Indican el tipo de archivo que se transfiere del servidor web al cliente y/o navegador web.
+Fueron en un primer momento utilizados para extender las características del correo electrónico, pero hoy su uso se ha extendido, siendo también denominados IMT (Internet Media Types).
+Los tipos MIME se componen de un tipo y un subtipo. Por ejemplo, un archivo, que es un documento de texto y que ha sido escrito en HTML, tendrá como tipo MIME “text/html”.
+El registro de los tipos MIME los controla la IANA (Internet Asigned Numbers Authority), y en su sitio Web podemos obtener la lista completa y actualizada de los tipos registrados.</p>
+<p>Es importante definir el registro de tipos MIME, y así asegurar que dos tipos de contenido distinto no acaban con el mismo nombre.
+El prefijo especial “x-” queda reservado para tipos experimentales (desplegados sin que haya terminado el proceso de registro) o tipos de uso interno de organizaciones. Un ejemplo de este tipo es el “image/x-fwf”.
+El protocolo HTTP usa tipos MIME en sus encabezados para las siguientes funciones:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Informar al cliente el tipo de datos que está recibiendo del servidor mediante el encabezado content-type. Por ejemplo, un navegador típico puede manejar los datos de tres maneras distintas según el tipo mime indicado en content-type :</p></li>
+<li><p>Permitir la negociación de contenido. El cliente, en su petición, incluye los tipos mime que acepta. Por ejemplo, si un navegador puede soportar documentos comprimidos de tipo “application/zip”, lo indicará con el encabezado http mediante la expresión allow: application/zip.</p></li>
+<li><p>Encapsular uno o más objetos dentro del cuerpo de mensaje, mediante los tipos mime multipart (definidos en el rfc 2046). Quizás el ejemplo más conocido sea el tipo “multipart/form-data”. El tipo “multipart/form-data” ha sido definido en el rfc 1867, y sirve para enviar los datos de un formulario (mediante el método post).</p></li>
+</ul>
+</div></blockquote>
+<p>Lista completa de tipos <a class="reference external" href="http://www.htmlquick.com/es/reference/mime-types.html">MIME</a>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pie de página">
+        <a href="arquitectura.html" class="btn btn-neutral float-left" title="Arquitecturas web" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="tecnologias.html" class="btn btn-neutral float-right" title="Tecnologías web" accesskey="n" rel="next">Siguiente <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Derechos de autor 2022, Pedro A. Santiago.</p>
+  </div>
+
+  Compilado con <a href="https://www.sphinx-doc.org/">Sphinx</a> usando un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a>
+    proporcionado por <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,8 @@
+docker run -dit --name ejerciciodockerfile -p 22:22 -v /home/pedro/Escritorio/rst/source/_static/tema1/practica0/soluciones/enlazado:/home/pedro ejemplo:latest
+docker exec -it d1dd10eab6d5 bash
+docker cp hola.java d1dd10eab6d5:/home/pedro
+#guión
+
+docker cp hola.java d1dd10eab6d5:/home/pedro
+docker exec -it d1dd10eab6d5 /bin/sh -c " cd /home/pedro; javac hola.java; java hola"
+

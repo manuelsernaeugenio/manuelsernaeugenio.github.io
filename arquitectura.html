@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arquitecturas web &mdash; documentación de DAW. Módulo: Despliegue de aplicaciones web. - </title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/translations.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="Protocolo HTTP" href="http.html" />
+    <link rel="prev" title="Introducción" href="introduccion.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> DAW. Módulo: Despliegue de aplicaciones web.
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Buscar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduccion.html">Introducción</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Arquitecturas web</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduccion">Introducción</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#modelo-cliente-servidor">Modelo cliente/servidor</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="http.html">Protocolo HTTP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tecnologias.html">Tecnologías web</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modelos.html">Modelos de arquitecturas web</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">DAW. Módulo: Despliegue de aplicaciones web.</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Arquitecturas web</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="arquitecturas-web">
+<h1>Arquitecturas web<a class="headerlink" href="#arquitecturas-web" title="Enlace permanente a este encabezado"></a></h1>
+<section id="introduccion">
+<h2>Introducción<a class="headerlink" href="#introduccion" title="Enlace permanente a este encabezado"></a></h2>
+<p>Se puede definir arquitectura web como la elección, planificación, diseño e implementación de los elementos necesarios para el funcionamiento de una aplicación web:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Hardware</p></li>
+<li><p>Sistemas operativos y servidores</p></li>
+<li><p>Aplicación en servidor</p></li>
+</ul>
+</div></blockquote>
+<p>Cuya finalidad principal es servir las aplicaciones a los clientes en cualquier momento.</p>
+</section>
+<section id="modelo-cliente-servidor">
+<h2>Modelo cliente/servidor<a class="headerlink" href="#modelo-cliente-servidor" title="Enlace permanente a este encabezado"></a></h2>
+<p>El modelo cliente servidor es la principal y primera arquitectura utilizada en las aplicaciones web, aunque no es exclusivo
+de estas. Por ejemplo, los sistemas operativos suelen utilizarlo para la gestión de las ventanas (servidor X Windows), o
+servidores de correo y de base de datos, entre muchos otros.</p>
+<p>Teniendo dos elementos principales:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Cliente</strong>: Se encarga de realizar las peticiones al servidor enviando la información necesaria para obtener la información.</p></li>
+<li><p><strong>Servidor</strong>: Se encuentra esperando peticiones de clientes (puede atender a más de un cliente al mismo tiempo). En el caso más sencillo obtiene el recurso (fichero) y lo envia al cliente, en caso más general, a partir de la información que facilita el cliente y de la que dispone el servidor, se fabrica la respuesta y se envia al  cliente.</p></li>
+</ul>
+</div></blockquote>
+<p>En el caso de la web los clientes son <strong>navegadores web</strong> y los servidores pueden ser <strong>servidores web</strong> o <strong>servidores de aplicaciones</strong>, existiendo otros servidores
+que dan apoyo al servidor web/aplicación, como servidor de base de datos o servicios de directorio.</p>
+<div class="admonition-razonar admonition">
+<p class="admonition-title">Razonar</p>
+<p>Este modelo fue utilizado durante los primeros momentos de la web, de hecho es la base sobre los que se han creado nuevos modelos.</p>
+</div>
+<p>Este modelo fue utilizado durante los primeros momentos de la web, de hecho es la base sobre los que se han creado nuevos modelos.</p>
+<p>Existen otras arquitecturas de red, dependiendo de los roles y las funcionalidades:</p>
+<ul>
+<li><p><strong>Peer to peer (P2P)</strong>. En este caso los elementos son tanto clientes como servidores.</p>
+<blockquote>
+<div><p>Entre las ventajas destacan:</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Escalabilidad</p></li>
+<li><p>Tolerancia a fallos</p></li>
+<li><p>Descentralización</p></li>
+<li><p>Privacidad</p></li>
+<li><p>Equilibro de carga</p></li>
+</ul>
+<p>Y las desventajas:</p>
+<ul class="simple">
+<li><p>Complejo</p></li>
+<li><p>Menos seguro</p></li>
+<li><p>Más tráfico</p></li>
+</ul>
+</li>
+<li><p><strong>Sistema distribuido</strong>. Colección de sistemas/servidores autónomos, sin memoria compatida que interactua entre sí para realizar una determinada labor común, viéndose desde el exterior como un único elemento.</p>
+<blockquote>
+<div><p>Ventajas:</p>
+<ul class="simple">
+<li><p>Economía</p></li>
+<li><p>Crecimiento:Escalabilidad</p></li>
+<li><p>Alto rendimiento</p></li>
+<li><p>Fiabilidad</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Editor/subscriptor</strong>. En este caso, no es el cliente el que solicita la petición, sino que se subscribe al servidor o a servicios de este y el servidor (editor) envia a todos los subscritores la información cuando se produce el evento al que se ha subscrito.</p></li>
+</ul>
+<div class="admonition-razonar admonition">
+<p class="admonition-title">Razonar</p>
+<p>¿Qué modelo de los anteriores se utiliza actualmente para grandes aplicaciones como Twitter o Facebook?</p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pie de página">
+        <a href="introduccion.html" class="btn btn-neutral float-left" title="Introducción" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="http.html" class="btn btn-neutral float-right" title="Protocolo HTTP" accesskey="n" rel="next">Siguiente <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Derechos de autor 2022, Pedro A. Santiago.</p>
+  </div>
+
+  Compilado con <a href="https://www.sphinx-doc.org/">Sphinx</a> usando un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a>
+    proporcionado por <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

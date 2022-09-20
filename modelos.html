@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modelos de arquitecturas web &mdash; documentación de DAW. Módulo: Despliegue de aplicaciones web. - </title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/translations.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="prev" title="Tecnologías web" href="tecnologias.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> DAW. Módulo: Despliegue de aplicaciones web.
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Buscar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduccion.html">Introducción</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arquitectura.html">Arquitecturas web</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http.html">Protocolo HTTP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tecnologias.html">Tecnologías web</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Modelos de arquitecturas web</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduccion">Introducción</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#arquitectura-monolitica">Arquitectura monolítica</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#arquitectura-modelo-vista-controlador-o-mvc">Arquitectura Modelo-Vista-Controlador o MVC</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#variaciones-de-la-arquitectura-mvc">Variaciones de la arquitectura MVC</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#domain-driven-desing-ddd-y-arquitectura-hexagonal">Domain Driven Desing (DDD) y arquitectura hexagonal</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">DAW. Módulo: Despliegue de aplicaciones web.</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Modelos de arquitecturas web</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="modelos-de-arquitecturas-web">
+<h1>Modelos de arquitecturas web<a class="headerlink" href="#modelos-de-arquitecturas-web" title="Enlace permanente a este encabezado"></a></h1>
+<section id="introduccion">
+<h2>Introducción<a class="headerlink" href="#introduccion" title="Enlace permanente a este encabezado"></a></h2>
+<blockquote>
+<div><p>Las aplicaciones web poseen un modelo cliente/servidor, pero dentro de cada uno de estos se establecen diferentes arquitecturas.
+Este apartado se centra en las arquitecturas del BackEnd, aunque en el FrontEnd también se tiene arquitecturas, muchas de ellas iguales o similares a las del lado del
+servidor.
+En los siguientes puntos se describen algunas de Las principales arquitecturas usadas en Web en el servidor, aunque su uso se puede extender (y de hecho se extiende) a aplicaciones
+de escritorio y/o nativas, teniendo en cuenta que el protocolo de comunicación es HTTP, ya sea una aplicación nativa, el navegador u otro sistema.</p>
+</div></blockquote>
+</section>
+<section id="arquitectura-monolitica">
+<h2>Arquitectura monolítica<a class="headerlink" href="#arquitectura-monolitica" title="Enlace permanente a este encabezado"></a></h2>
+<blockquote>
+<div><p>Fue la primera arquitectura, toda la funcionalidad se encuentra en el mismo fichero, mezclando la lógica, el acceso a datos, el código HTML o el estilo.
+Difícil de desarrollar, de depurar y mantener, genera código «espagueti».</p>
+</div></blockquote>
+</section>
+<section id="arquitectura-modelo-vista-controlador-o-mvc">
+<h2>Arquitectura Modelo-Vista-Controlador o MVC<a class="headerlink" href="#arquitectura-modelo-vista-controlador-o-mvc" title="Enlace permanente a este encabezado"></a></h2>
+<blockquote>
+<div><p>Esta arquitectura ya se ha tratado en diferentes puntos del tema. Existe en la literatura diferentes definiciones de cada uno de los elementos de la arquitectura y con diferentes implementaciones.
+Divide la arquitectura monolítica en 3 elementos:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Modelo.</strong> Representa la información con la que se opera el sistema, en Java los típicos JavaBeans con getter y setter, junto con los mecanismos de persistencia y la <strong>lógica de negocio</strong>, dependiendo de la implementación es el resposible de pasar la información a la vista con los cambios.</p></li>
+<li><p><strong>Vista.</strong> Encargado de realizar las peticiones al controlador y esperar la respuesta de los cambios en el modelo para mostrarlo.</p></li>
+<li><p><strong>Controlador.</strong> Su función es la de a partir de la solicitud de la vista, redirigir la petición de la vista hacia el modelo correcto (posee en la web un enrutador).  Dependiendo de la implementaciónaciendo crear una nueva vista (HTML) a partir de modelo.</p></li>
+</ul>
+</div></blockquote>
+<p>Las principales variaciones entre las diferentes implementaciónes está en quien notifica los cambios en el modelo a la vista, si el propio modelo o el controlador, además existe un debate si el modelo se ha de implementa con objetos o interactuar directamente con la base de datos sin pasar por objetos.
+<strong>En el siguiente ejemplo se realiza un simple MVC en el que es el controlador el que genera la vista.</strong></p>
+<figure class="align-center" id="id1">
+<a class="with-border reference internal image-reference" href="_images/mvc-controlador.png"><img alt="_images/mvc-controlador.png" class="with-border" src="_images/mvc-controlador.png" style="width: 450px;" /></a>
+<figcaption>
+<p><span class="caption-text">Diagrama de secuencia de petición en MVC para Web.</span><a class="headerlink" href="#id1" title="Enlace permanente a esta imagen"></a></p>
+</figcaption>
+</figure>
+<div class="admonition-video admonition">
+<p class="admonition-title">Vídeo</p>
+<p>Arquitectura MVC en aplicaciones gráficas con código <a class="reference external" href="https://www.youtube.com/watch?v=dTVVa2gfht8">MVC</a>.</p>
+</div>
+</div></blockquote>
+<section id="variaciones-de-la-arquitectura-mvc">
+<h3>Variaciones de la arquitectura MVC<a class="headerlink" href="#variaciones-de-la-arquitectura-mvc" title="Enlace permanente a este encabezado"></a></h3>
+<blockquote>
+<div><p>A partir de el modelo MVC se han desarrollado variaciones del mismo para adaptarlos a las necesidades de cada tipo de aplicación.
+Algunos de estas adaptaciones son:</p>
+<ul class="simple">
+<li><p><strong>HMVC.</strong> Consiste en poder tener una jerarquía de pequeñas arquitecturas MVC, de forma que se va «llamando» desde un MVC a sus hijos.</p></li>
+<li><p><strong>MVA.</strong> En este caso el modelo y la vista no se comunican en ningun caso, el adaptador (A) se encarga de transformar los datos del modelo a las necesidades de la vista.</p></li>
+<li><p><strong>MVP.</strong> Se descarga de responsavilidad a la vista, y es el presentador (P) en encargado de actuar sobre el modelo y formatear los datos para la vista.</p></li>
+<li><p><strong>MVVM.</strong> Model-View-ViewModel.La variante que más uso tiene, ya que Microsoft lo ha implenentado en aplicaciones de escritorio. Su principal diferencia es poder realizar pruebas unitarias para el modelo vista y poder evolucionar de forma independiente a la vista, de igual forma la vista puede evolucionar de forma independiente</p></li>
+</ul>
+</div></blockquote>
+</section>
+</section>
+<section id="domain-driven-desing-ddd-y-arquitectura-hexagonal">
+<h2>Domain Driven Desing (DDD) y arquitectura hexagonal<a class="headerlink" href="#domain-driven-desing-ddd-y-arquitectura-hexagonal" title="Enlace permanente a este encabezado"></a></h2>
+<blockquote>
+<div><p>En los últimos tiempos se han desarrollado nuevas arquitecturas, aunque DDD no es exactamente una arquitectura, sino más bien un enfoque en el desarrollo del
+software, que se centra en el problema a resolver (clases, entidades, algoritmos…), dejando en un segundo plano otros aspectos como las conexiones con las bases de datos,
+la gestión de los logs o configuración de las herramientas. Esta filosifia puede conseguir un código más limpio, la realización de pruebas de forma independiente
+de los diferentes elementos, además el <strong>acoplamiento</strong> entre los diferentes elementos de la aplicación es mínimo.</p>
+<p>Para conseguir aislar el modelo del dominio de los elementos externos se utilzan diferentes alternativas, siendo la más conocida
+la arquitectura hexagonal. Esta arquitectura define diferentes elementos como:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Infraestructura.</strong> Elementos externos con los que se comunica la aplicación.</p></li>
+<li><p><strong>Puertos.</strong> Interfaces públicas para interactuar con la aplicación, puede ser un cliente o una base de datos, entre otras.</p></li>
+<li><p><strong>Adaptadores.</strong> Especialización de un puerto, realiza una transformación</p></li>
+</ul>
+</div></blockquote>
+<p>Establece 2 capas independientes:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Domain.</strong> Contiene el dominio, las entidades y la lógica de negocio, nada más.</p></li>
+<li><p><strong>Entidades exterinas/infraestructura.</strong> Se comunican con el dominio a través de los puertos y adaptadores, siendo tanto la presentación como la base de datos o cualquier otro elemento externo.</p></li>
+</ul>
+<figure class="align-center" id="id2">
+<a class="with-border reference internal image-reference" href="_images/hexagonal.png"><img alt="_images/hexagonal.png" class="with-border" src="_images/hexagonal.png" style="width: 550px;" /></a>
+<figcaption>
+<p><span class="caption-text">Diagrama de la arquitectura hexagonal.</span><a class="headerlink" href="#id2" title="Enlace permanente a esta imagen"></a></p>
+</figcaption>
+</figure>
+</div></blockquote>
+<div class="admonition-profundizar admonition">
+<p class="admonition-title">Profundizar</p>
+<p>En el <a class="reference external" href="https://alistair.cockburn.us/hexagonal-architecture/">artículo</a> se profundiza en los fundamentos de la arquitectura hexagonal (originariamente pPorts and Adapters) .</p>
+<p>También existe un curso en <a class="reference external" href="https://openwebinars.net/cursos/arquitectura-hexagonal-2020/">OpenWebinars</a> sobre arquitectura hexagonal.</p>
+</div>
+<p>Por último indicar que la arquitectura hexagonal es un tipo de arquitectura que sigue las llamadas arquitecturas limpias o <a class="reference external" href="https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html">«clean architecture»</a>
+que buscan la independencia de las capas y el menor acoplamiento posible, estableciendo una serie de limitaciones en cuanto a las capas de la aplicación y como regla
+general se estable la dependencia entre ellas que va de fuera hacia dentro, de forma que la capa más interna no dependa (acoplamiento) de ninguna otra capa, en la arquitectura hexagonal la capa de
+dominio.</p>
+</div></blockquote>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pie de página">
+        <a href="tecnologias.html" class="btn btn-neutral float-left" title="Tecnologías web" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Derechos de autor 2022, Pedro A. Santiago.</p>
+  </div>
+
+  Compilado con <a href="https://www.sphinx-doc.org/">Sphinx</a> usando un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a>
+    proporcionado por <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

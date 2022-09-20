@@ -1,0 +1,26 @@
+
+
+.wy-nav-content {
+    max-width: 95%;
+    text-align: justify;
+    text-justify: inter-word;
+}
+.admonition-razonar > .admonition-title{
+    background-color:rgb(26, 188, 156);
+}
+
+.admonition-investigar > .admonition-title{
+    background-color: orange;
+}
+
+.admonition-video > .admonition-title{
+    background-color: blueviolet;
+}
+
+.admonition-profundizar > .admonition-title{
+    background-color: #990000;
+}
+
+.admonition-ejercicio > .admonition-title{
+    background-color: #119911;
+}
